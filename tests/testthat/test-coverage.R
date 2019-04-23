@@ -238,7 +238,7 @@ testthat::test_that("get_taxonomicCoverage", {
   f <- system.file("xsd/test/eml-i18n.xml", package = "EML")
   eml <- read_eml(f)
   df <-
-    EML:::get_taxonomicCoverage(eml@dataset@coverage@taxonomicCoverage)
+    get_taxonomicCoverage(eml@dataset@coverage@taxonomicCoverage)
 
   testthat::expect_is(df, "data.frame")
   testthat::expect_equal(ncol(df), 8)
