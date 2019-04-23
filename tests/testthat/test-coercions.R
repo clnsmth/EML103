@@ -19,7 +19,7 @@ testthat::expect_equal(to@role[[1]], "ctb")
 
 
 citation <-
-  read_eml(system.file("xsd/test/eml-literature.xml", package = "EML"))
+  read_eml(system.file("xsd/test/eml-literature.xml", package = "EML103"))
 x <- as(citation, "bibentry")
 testthat::expect_is(x, "bibentry")
 y <- as(x, "citation")

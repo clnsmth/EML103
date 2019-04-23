@@ -1,6 +1,6 @@
 testthat::context("eml_find and eml_get")
 
-f <- system.file("examples", "coverage_test.xml", package = "EML")
+f <- system.file("examples", "coverage_test.xml", package = "EML103")
 eml <- read_eml(f)
 
 testthat::test_that("we can find and get an element", {

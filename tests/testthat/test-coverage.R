@@ -145,7 +145,7 @@ testthat::test_that("set_taxonomicCoverage create a object with correct depth", 
 testthat::test_that("set_taxonomicCoverage create valid EML", {
   testthat::skip_on_cran()
 
-  f <- system.file("examples", "coverage_test.xml", package = "EML")
+  f <- system.file("examples", "coverage_test.xml", package = "EML103")
   eml <- read_eml(f)
 
   physical <- eml_get(eml, "physical")
@@ -235,7 +235,7 @@ testthat::test_that("set_taxonomicCoverage create valid EML", {
 })
 
 testthat::test_that("get_taxonomicCoverage", {
-  f <- system.file("xsd/test/eml-i18n.xml", package = "EML")
+  f <- system.file("xsd/test/eml-i18n.xml", package = "EML103")
   eml <- read_eml(f)
   df <-
     get_taxonomicCoverage(eml@dataset@coverage@taxonomicCoverage)

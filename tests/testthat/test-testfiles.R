@@ -13,7 +13,7 @@ all_test_examples<- function(xml) {
     message(paste("testing", xml))
 
     ## Read EML
-    f <- system.file(paste0("xsd/test/", xml), package = "EML")
+    f <- system.file(paste0("xsd/test/", xml), package = "EML103")
     eml <- read_eml(f)
     testthat::expect_true(isS4(eml))
 

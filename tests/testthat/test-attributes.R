@@ -3,13 +3,13 @@ testthat::context("get_attributes")
 eml <-
   read_eml(system.file(
     "xsd/test/eml-datasetWithAttributelevelMethods.xml",
-    package = "EML"
+    package = "EML103"
   ))
 A <- eml@dataset@dataTable[[1]]@attributeList
 df <- get_attributes(A)
 
 eml <-
-  read_eml(system.file("xsd/test/eml-i18n.xml", package = "EML"))
+  read_eml(system.file("xsd/test/eml-i18n.xml", package = "EML103"))
 A <- eml@dataset@dataTable[[1]]@attributeList
 df1 <- get_attributes(A)
 
@@ -40,7 +40,7 @@ testthat::test_that("we can have numeric data with bounds where some bounds are 
                       dataset <-
                         new(
                           "dataset",
-                          title = "Example EML",
+                          title = "Example EML103",
                           creator = me,
                           contact = me,
                           dataTable = dataTable

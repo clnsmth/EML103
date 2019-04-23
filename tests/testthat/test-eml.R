@@ -2,7 +2,7 @@ testthat::context("xsd/test/eml.xml")
 
 testthat::test_that("We can parse the sample EML file correctly", {
 
-  f <- system.file("xsd/test", "eml.xml", package = "EML")
+  f <- system.file("xsd/test", "eml.xml", package = "EML103")
   eml <- read_eml(f)
 
   ## FIXME: even basic schema validation needs network connection for w3.org schema checks

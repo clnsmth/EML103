@@ -1,7 +1,7 @@
 testthat::context("physical")
 
 testthat::test_that("We can generate EML physical structures correctly", {
-  library(EML)
+  library(EML103)
 
   p1 <-
     set_physical("filename",

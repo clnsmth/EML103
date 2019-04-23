@@ -3,7 +3,7 @@ testthat::context("Validating EML documents")
 testthat::test_that("We return TRUE when validating valid documents", {
 
   f <-
-    system.file("examples", "example-eml-valid.xml", package = "EML")
+    system.file("examples", "example-eml-valid.xml", package = "EML103")
 
   testthat::expect_true(eml_validate(f))
   testthat::expect_message(eml_validate(f), NA)
@@ -13,7 +13,7 @@ testthat::test_that("We return TRUE when validating valid documents", {
   f2 <-
     system.file("examples",
                 "example-eml-valid-special-characters.xml",
-                package = "EML")
+                package = "EML103")
 
   v <- eml_validate(f2, encoding = "latin1")
   testthat::expect_true(v)
@@ -24,7 +24,7 @@ testthat::test_that("We return TRUE when validating valid documents", {
   # Check that we properly validate each supported version of EML
   versions <- c("eml-2.1.1", "eml-2.1.0")
   for(version in versions) {
-      f <- system.file("examples", paste0("example-", version, ".xml"), package = "EML")
+      f <- system.file("examples", paste0("example-", version, ".xml"), package = "EML103")
       testthat::expect_true(eml_validate(f))
   }
 })
@@ -32,7 +32,7 @@ testthat::test_that("We return TRUE when validating valid documents", {
 testthat::test_that("We return TRUE when validating valid eml objects", {
 
   f <-
-    system.file("examples", "example-eml-valid.xml", package = "EML")
+    system.file("examples", "example-eml-valid.xml", package = "EML103")
   eml <- read_eml(f)
   testthat::expect_true(eml_validate(f))
   testthat::expect_message(eml_validate(f), NA)
@@ -41,7 +41,7 @@ testthat::test_that("We return TRUE when validating valid eml objects", {
   f2 <-
     system.file("examples",
                 "example-eml-valid-special-characters.xml",
-                package = "EML")
+                package = "EML103")
   eml2 <- read_eml(f2, encoding = "latin1")
   testthat::expect_true(eml_validate(eml2, encoding = "latin1"))
   testthat::expect_message(eml_validate(eml2, encoding = "latin1"), NA)
@@ -50,7 +50,7 @@ testthat::test_that("We return TRUE when validating valid eml objects", {
 testthat::test_that("We return FALSE and messages when validating invalid documents", {
 
   f <-
-    system.file("examples", "example-eml-invalid.xml", package = "EML")
+    system.file("examples", "example-eml-invalid.xml", package = "EML103")
 
   v <- eml_validate(f)
   testthat::expect_false(v)
@@ -62,7 +62,7 @@ testthat::test_that("We return FALSE and messages when validating invalid docume
 
 
 testthat::test_that("We can handle validation against sub-schema alone (e.g. against eml-access.xsd)",{
-  f <- system.file("xsd/test/eml-access.xml", package = "EML")
+  f <- system.file("xsd/test/eml-access.xml", package = "EML103")
   v <- eml_validate(f)
   testthat::expect_true(v)
   testthat::expect_length(attr(v, "errors"), 0)
@@ -71,7 +71,7 @@ testthat::test_that("We can handle validation against sub-schema alone (e.g. aga
 
 
 testthat::test_that("We return TRUE when validating a valid just created eml object with latin1 encoding", {
-  ex <- system.file("examples", "create-full-eml.R", package = "EML")
+  ex <- system.file("examples", "create-full-eml.R", package = "EML103")
   source(ex)
 
 
@@ -85,7 +85,7 @@ testthat::test_that("We return TRUE when validating a valid just created eml obj
 
 
 testthat::test_that("We return TRUE when validating a valid just created eml object", {
-  ex <- system.file("examples", "create-full-eml.R", package = "EML")
+  ex <- system.file("examples", "create-full-eml.R", package = "EML103")
   source(ex)
 
   v <- eml_validate(eml)
