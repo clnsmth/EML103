@@ -13,7 +13,7 @@ eml_get(x, element = NULL, ...)
 
 
   \S4method{eml_get}{unitList}(x = read_eml(system.file("xsd/eml-2.1.1/eml-unitDictionary.xml",
-  package = "EML")))
+  package = "EML103")))
 }
 \arguments{
 \item{x}{an EML object or child/descendant object}

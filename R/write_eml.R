@@ -82,4 +82,4 @@ prune_empty <- function(xml){
 is_blank <- function(x) length(x) < 1 || x == ""
 
 ## Default XML namespaces
-eml_namespaces <- xml2::xml_ns(xml2::read_xml(system.file("examples", "example-eml-valid.xml", package = "EML")))
+eml_namespaces <- xml2::xml_ns(xml2::read_xml(system.file("examples", "example-eml-valid.xml", package = "EML103")))

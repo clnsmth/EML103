@@ -22,7 +22,7 @@
 #' }
 #'
 get_unitList <-
-  function(x = read_eml(system.file("xsd/eml-2.1.1/eml-unitDictionary.xml", package = "EML"))) {
+  function(x = read_eml(system.file("xsd/eml-2.1.1/eml-unitDictionary.xml", package = "EML103"))) {
     unitList <- x
     if (is(unitList, "xml_node")) {
       unitList <- emlToS4(unitList)
